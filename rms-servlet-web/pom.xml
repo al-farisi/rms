@@ -38,6 +38,10 @@
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
                 <artifactId>tomcat7-maven-plugin</artifactId>
+                <configuration>          
+				    <server>tomcat-development-server</server>
+			    	<port>1010</port>
+			  	</configuration>
             </plugin>
         </plugins>
     </build>
