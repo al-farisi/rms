@@ -34,3 +34,16 @@ INSERT INTO `user` (`id`, `user_name`, `password`) VALUES
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+
+-- Dumping structure for table rmsdb.product
+CREATE TABLE IF NOT EXISTS `product` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `code`  VARCHAR(20) not null,
+  `name`  VARCHAR(128) not null,
+  `price` FLOAT not null,
+  primary key (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+
+INSERT INTO `product` (`id`, `code`, `name`, `price`) VALUES
+	(1, 'PR001', 'Product 1', 1000),
+	(2, 'PR002', 'Product 2', 2000);

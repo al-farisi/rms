@@ -19,7 +19,7 @@
 	rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="css/blog-home.css" rel="stylesheet">
+<link href="css/styles.css" rel="stylesheet">
 
 </head>
 
@@ -45,6 +45,8 @@
 						if (session.getAttribute("user") == null) {
 					%>
 					<li class="nav-item"><a class="nav-link"
+						href="/rms-servlet-web/users/add-user-form">Register</a></li>
+					<li class="nav-item"><a class="nav-link"
 						href="/rms-servlet-web/login">Log In</a></li>
 					<%
 						} else {
@@ -62,7 +64,7 @@
 
 	<!-- Page Content -->
 	<div class="container">
-
+		<div style="display:inline-block; vertical-align:top; height:100px;"></div>
 		<div class="row">
 
 			<!-- Blog Entries Column -->

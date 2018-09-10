@@ -42,7 +42,7 @@
 					<li class="nav-item"><a class="nav-link"
 						href="/rms-servlet-web/users/list">Users</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="/rms-servlet-web/products/list">Products</a></li>
+						href="/rms-servlet-web/posts/list">Posts</a></li>
 					<%
 						if (session.getAttribute("user") == null) {
 					%>
@@ -64,21 +64,22 @@
 	<!-- Page Content -->
 	<div class="container">
 		<div style="display:inline-block; vertical-align:top; height:100px;"></div>
-		<h1>Add New User</h1>
+		<h1>Update User - ${user.userName}</h1>
 		</br>
 		<div class="row">
 			<div class="col-md-8">
 				<div class="row">
 
-					<c:url var="addLink" value="/users/add"></c:url>
-					<form action="${addLink}" method="GET">
+					<c:url var="updateLink" value="/users/update"></c:url>
+					<form action="${updateLink}" method="GET">
+						<input type="hidden" name="userId" value="${user.id}" />
 						<div class="form-group">
 							<label for="Username">Username</label> <input type="text"
-								class="form-control" name="userName" />
+								class="form-control" name="userName" value="${user.userName}" />
 						</div>
 						<div class="form-group">
 							<label for="Password">Password</label> <input type="text"
-								class="form-control" name="password" />
+								class="form-control" name="password" value="${user.password}" />
 						</div>
 						<button type="submit" class="btn btn-info">Submit</button>
 						<c:url var="backLink" value="/users/list"></c:url>

@@ -19,7 +19,7 @@
 	rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="css/blog-home.css" rel="stylesheet">
+<link href="../../css/styles.css" rel="stylesheet">
 
 </head>
 
@@ -42,7 +42,7 @@
 					<li class="nav-item"><a class="nav-link"
 						href="/rms-servlet-web/users/list">Users</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="/rms-servlet-web/posts/list">Posts</a></li>
+						href="/rms-servlet-web/products/list">Products</a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="/rms-servlet-web/login">Log In</a></li>
 				</ul>
@@ -52,6 +52,7 @@
 
 	<!-- Page Content -->
 	<div class="container">
+		<div style="display:inline-block; vertical-align:top; height:100px;"></div>
 		<h1>Login</h1>
 		</br>
 		<div class="row">
