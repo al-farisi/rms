@@ -89,6 +89,7 @@ public class UserDaoImpl implements UserDao
             PreparedStatement stmt = connection.prepareStatement("UPDATE user SET user_name=?, password=? WHERE id=?");
             stmt.setString(1, user.getUserName());
             stmt.setString(2, user.getPassword());
+            stmt.setLong(3, user.getId());
             int i = stmt.executeUpdate();
             if(i == 1) {
                 return true;
@@ -140,6 +141,28 @@ public class UserDaoImpl implements UserDao
         }
 
         return Optional.empty();
+    }
+
+    public boolean checkUserByUsernameAndPassword(String username, String password) {
+        try (Connection connection = DataSourceFactory.getConnection())
+        {
+            PreparedStatement stmt = connection.prepareStatement("SELECT * FROM user WHERE user_name=? and password=?");
+            stmt.setString(1, username);
+            stmt.setString(2, password);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next())
+            {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        catch (SQLException ex)
+        {
+            ex.printStackTrace();
+        }
+
+        return false;
     }
 
     private static class SingletonHelper

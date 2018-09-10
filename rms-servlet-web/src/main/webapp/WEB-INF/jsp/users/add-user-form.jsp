@@ -63,54 +63,26 @@
 
 	<!-- Page Content -->
 	<div class="container">
-		<h1>List of Users</h1>
-		<br>
+		<h1>Add New User</h1>
+		</br>
 		<div class="row">
 			<div class="col-md-8">
 				<div class="row">
-					<a href="#"
-						onclick="window.location.href='add-user-form'; return false;"
-						class="btn btn-info" role="button">Add User</a> <br>
-				</div>
-				</br>
-				<div class="row">
 
-					<table class="table table hover">
-						<thead>
-							<tr>
-								<th scope="col">Username</th>
-								<th scope="col">Password</th>
-								<th scope="col">Action</th>
-							</tr>
-						</thead>
-						<tbody>
-
-							<c:forEach var="user" items="${users}">
-
-								<!-- set up a link for each student -->
-								<c:url var="tempLink" value="/users/load">
-									<c:param name="userId" value="${user.id}" />
-								</c:url>
-
-								<!--  set up a link to delete a student -->
-								<c:url var="deleteLink" value="/users/delete">
-									<c:param name="userId" value="${user.id}" />
-								</c:url>
-
-								<tr>
-									<td>${user.userName}</td>
-									<td>${user.password}</td>
-									<td><a href="${tempLink}" class="btn btn-warning"
-										role="button">Update</a> <a href="${deleteLink}"
-										class="btn btn-danger" role="button"
-										onclick="if (!(confirm('Are you sure you want to delete this user?'))) return false">
-											Delete</a></td>
-								</tr>
-
-							</c:forEach>
-
-						</tbody>
-					</table>
+					<c:url var="addLink" value="/users/add"></c:url>
+					<form action="${addLink}" method="GET">
+						<div class="form-group">
+							<label for="Username">Username</label> <input type="text"
+								class="form-control" name="userName" />
+						</div>
+						<div class="form-group">
+							<label for="Password">Password</label> <input type="text"
+								class="form-control" name="password" />
+						</div>
+						<button type="submit" class="btn btn-info">Submit</button>
+						<c:url var="backLink" value="/users/list"></c:url>
+						<a href="${backLink}" class="btn btn-default">Back to List</a>
+					</form>
 				</div>
 
 

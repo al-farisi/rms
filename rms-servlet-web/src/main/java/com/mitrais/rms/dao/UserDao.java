@@ -15,4 +15,5 @@ public interface UserDao extends Dao<User, Long>
      * @return user
      */
     Optional<User> findByUserName(String userName);
+    boolean checkUserByUsernameAndPassword(String username, String password);
 }
